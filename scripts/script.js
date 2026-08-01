@@ -40,7 +40,8 @@ createButton.addEventListener("click", async function (){
 
     const newPost = await createPost(title, body);
 
-    console.log(newPost);
+    allPosts.push(newPost);
+    displayPosts(allPosts);
 });
 
 
