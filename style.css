@@ -6,6 +6,12 @@ body {
 }
 
 
+.container{
+    background: linear-gradient(to right, #c9bbff, #8093e9);
+    padding: 30px;
+    border-radius: 15px;
+}
+
 h1 {
     text-align: center;
     color: #2d3436;
