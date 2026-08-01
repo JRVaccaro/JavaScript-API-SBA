@@ -1,4 +1,4 @@
-import { getPosts, createPost } from "./api.js";
+import { getPosts, createPost, updatePost } from "./api.js";
 
 import { displayPosts, searchPosts} from "./functions.js";
 
@@ -37,4 +37,21 @@ createButton.addEventListener("click", async function (){
     const newPost = await createPost(title, body);
 
     console.log(newPost);
+});
+
+
+const updateButton = document.getElementById("updateButton");
+const updateId = document.getElementById("updateId");
+const updateTitle = document.getElementById("updateTitle");
+
+updateButton.addEventListener("click", async function(){
+
+const id = updateId.value;
+const title = updateTitle.value;
+
+
+const updatedPost = await updatePost(id, title);
+
+console.log(updatedPost);
+
 });
