@@ -17,14 +17,14 @@ loadPosts();
 const searchButton = document.getElementById("searchButton");
 const searchInput = document.getElementById("searchInput");
 
-searchButton.addEventListener("click", function()){
+searchButton.addEventListener("click", function(){
     const searchText = searchInput.value;
 
     const filteredPosts = searchPosts(allPosts, searchText);
 
 displayPosts(filteredPosts);
 
-}
+});
 
 const createButton = document.getElementById("createButton");
 const postTitle = document.getElementById("postTitle");
