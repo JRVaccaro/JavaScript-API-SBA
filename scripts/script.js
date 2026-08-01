@@ -1,8 +1,27 @@
 import { getPosts } from "./api.js";
 
-async function loadPosts(){
-    const posts = await getPosts();
+import { displayPosts, searchPosts} from "./functions.js";
 
-    console.log(posts);
+
+
+let allPosts = [];
+
+async function loadPosts(){
+allPosts = await getPosts();
+
+
+    displayPosts(allPosts);
 }
 loadPosts();
+
+const searchButton = document.getElementById("searchButton");
+const searchInput = document.getElementById("searchInput");
+
+searchButton.addEventListener("click", function()){
+    const searchText = searchInput.value;
+
+    const filteredPosts = searchPosts(allPosts, searchText);
+
+displayPosts(filteredPosts);
+
+}

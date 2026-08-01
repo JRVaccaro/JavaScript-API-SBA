@@ -20,3 +20,17 @@ export function displayPosts(posts){
     }
     
 }
+
+export function searchPosts(posts, searchText){
+    const filteredPosts = [];
+
+    for(let i = 0; i < posts.length; i++){
+        if(posts[i].title.toLowerCase().includes(searchText.toLowerCase)){
+            filteredPosts.push(posts[i]);
+     
+        }     
+}
+
+return filteredPosts;
+
+}
