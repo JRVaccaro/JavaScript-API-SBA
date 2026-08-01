@@ -33,3 +33,24 @@ export async function createPost(title, body){
     console.log(error);
 }
 }
+
+export async function updatePost(id, title){
+    try{
+        const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,{
+            method: "PATCH",
+            body: JSON.stringify({
+                title: title
+            }),
+            headers:{
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        });
+
+        const data = await response.json();
+
+        return data;
+
+    } catch (error){
+        console.log(error);
+    }
+}
