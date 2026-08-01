@@ -20,7 +20,11 @@ const searchInput = document.getElementById("searchInput");
 searchButton.addEventListener("click", function (){
     const searchText = searchInput.value;
 
+    console.log("searching for: " + searchText);
+    console.log("allPosts: " + allPosts);
+
     const filteredPosts = searchPosts(allPosts, searchText);
+    console.log("filteredPosts: " + filteredPosts);
 
 displayPosts(filteredPosts);
 
