@@ -56,7 +56,11 @@ const title = updateTitle.value;
 
 
 const updatedPost = await updatePost(id, title);
-
-console.log(updatedPost);
+for(let i = 0; i < allPosts.length; i++){
+    if(allPosts[i].id == id){
+        allPosts[i].title = updatedPost.title;
+    }
+}
+displayPosts(allPosts);
 
 });
